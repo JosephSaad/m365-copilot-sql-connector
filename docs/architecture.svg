@@ -1,111 +1,143 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1900 1180" width="1900" height="1180" font-family="Segoe UI, Calibri, sans-serif">
-  <defs>
-    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5b6a76"/></marker>
-    <marker id="at" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f7ac0"/></marker>
-  </defs>
-  <rect width="1900" height="1180" fill="#ffffff"/>
-  <text x="50" y="62" font-size="34" font-weight="600" fill="#0b2f52">Microsoft 365 Copilot connector platform</text>
-  <text x="50" y="98" font-size="20" fill="#5b6a76">High level architecture as of v1.7.1. Dashed elements are optional, out of scope, or the path not taken.</text>
-  <rect x="50" y="150" width="380" height="520" rx="14" fill="#f3f7fa" stroke="#d6e0e9" stroke-width="2"/>
-  <text x="72" y="184" font-size="17" font-weight="600" letter-spacing="1.5" fill="#0b2f52">SOURCES</text>
-  <text x="72" y="208" font-size="15" fill="#5b6a76">On premises, never exposed to the cloud</text>
-  <rect x="520" y="150" width="520" height="520" rx="14" fill="#f3f7fa" stroke="#d6e0e9" stroke-width="2"/>
-  <text x="542" y="184" font-size="17" font-weight="600" letter-spacing="1.5" fill="#0b2f52">THE PUSH TOOLS</text>
-  <text x="542" y="208" font-size="15" fill="#5b6a76">Console apps. One line of Main each</text>
-  <rect x="1130" y="150" width="430" height="520" rx="14" fill="#f3f7fa" stroke="#d6e0e9" stroke-width="2"/>
-  <text x="1152" y="184" font-size="17" font-weight="600" letter-spacing="1.5" fill="#0b2f52">MICROSOFT 365 CLOUD</text>
-  <rect x="520" y="720" width="520" height="390" rx="14" fill="#f3f7fa" stroke="#d6e0e9" stroke-width="2"/>
-  <text x="542" y="754" font-size="17" font-weight="600" letter-spacing="1.5" fill="#0b2f52">OPERATIONS</text>
-  <rect x="1130" y="720" width="430" height="390" rx="14" fill="#f3f7fa" stroke="#d6e0e9" stroke-width="2"/>
-  <text x="1152" y="754" font-size="17" font-weight="600" letter-spacing="1.5" fill="#0b2f52">THE OTHER PATH</text>
-  <text x="1152" y="778" font-size="15" fill="#5b6a76">Agent hosted, no Graph dependency</text>
-  <polyline points="400,263 550,271" fill="none" stroke="#5b6a76" stroke-width="2" stroke-linejoin="round" marker-end="url(#a)"/>
-  <polyline points="400,363 550,271" fill="none" stroke="#5b6a76" stroke-width="2" stroke-linejoin="round" marker-end="url(#a)"/>
-  <polyline points="400,473 475,473 475,271 550,271" fill="none" stroke="#5b6a76" stroke-width="2" stroke-dasharray="7,6" stroke-linejoin="round" marker-end="url(#a)"/>
-  <polyline points="400,593 475,593 475,271 550,271" fill="none" stroke="#5b6a76" stroke-width="2" stroke-dasharray="7,6" stroke-linejoin="round" marker-end="url(#a)"/>
-  <polyline points="1010,271 1160,271" fill="none" stroke="#1f7ac0" stroke-width="3.5" stroke-linejoin="round" marker-end="url(#at)"/>
-  <polyline points="1345,317 1345,337" fill="none" stroke="#5b6a76" stroke-width="2" stroke-linejoin="round" marker-end="url(#a)"/>
-  <polyline points="1345,413 1345,433" fill="none" stroke="#5b6a76" stroke-width="2" stroke-linejoin="round" marker-end="url(#a)"/>
-  <polyline points="1010,271 1068,271 1068,488 1010,488" fill="none" stroke="#5b6a76" stroke-width="2" stroke-linejoin="round" marker-end="url(#a)"/>
-  <polyline points="780,413 780,433" fill="none" stroke="#5b6a76" stroke-width="2" stroke-dasharray="7,6" stroke-linejoin="round" marker-end="url(#a)"/>
-  <polyline points="1010,488 1036,488 1036,835 1010,835" fill="none" stroke="#5b6a76" stroke-width="2" stroke-linejoin="round" marker-end="url(#a)"/>
-  <polyline points="780,880 780,900" fill="none" stroke="#5b6a76" stroke-width="2" stroke-linejoin="round" marker-end="url(#a)"/>
-  <polyline points="780,990 780,1010" fill="none" stroke="#5b6a76" stroke-width="2" stroke-linejoin="round" marker-end="url(#a)"/>
-  <polyline points="1010,271 1052,271 1052,1048 1010,1048" fill="none" stroke="#5b6a76" stroke-width="2" stroke-dasharray="7,6" stroke-linejoin="round" marker-end="url(#a)"/>
-  <polyline points="1345,910 1345,890" fill="none" stroke="#1f7ac0" stroke-width="3.5" stroke-linejoin="round" marker-end="url(#at)"/>
-  <rect x="80" y="225" width="320" height="76" rx="10" fill="#5c8ca8" stroke="#5c8ca8" stroke-width="2" opacity="1"/>
-  <text x="98" y="257" font-size="19" font-weight="600" fill="#ffffff">SQL Server, tickets</text>
-  <text x="98" y="281" font-size="15" fill="#dbe7f0">SELECT only, least privilege</text>
-  <rect x="80" y="325" width="320" height="76" rx="10" fill="#5c8ca8" stroke="#5c8ca8" stroke-width="2" opacity="1"/>
-  <text x="98" y="357" font-size="19" font-weight="600" fill="#ffffff">SQL Server, hierarchy</text>
-  <text x="98" y="381" font-size="15" fill="#dbe7f0">Customers, engagements, time</text>
-  <rect x="80" y="425" width="320" height="96" rx="10" fill="#5c8ca8" stroke="#5c8ca8" stroke-width="2" stroke-dasharray="8,6" opacity="0.58"/>
-  <text x="98" y="457" font-size="19" font-weight="600" fill="#ffffff">Cloudera CDP</text>
-  <text x="98" y="481" font-size="15" fill="#dbe7f0">HDFS, Hive, Atlas catalogue</text>
-  <rect x="80" y="545" width="320" height="96" rx="10" fill="#5c8ca8" stroke="#5c8ca8" stroke-width="2" stroke-dasharray="8,6" opacity="0.58"/>
-  <text x="98" y="577" font-size="19" font-weight="600" fill="#ffffff">Apache Ranger</text>
-  <text x="98" y="601" font-size="15" fill="#dbe7f0">Read before anything else.</text>
-  <text x="98" y="621" font-size="15" fill="#dbe7f0">A masked table is never indexed</text>
-  <rect x="550" y="225" width="460" height="92" rx="10" fill="#1f7ac0" stroke="#1f7ac0" stroke-width="2" opacity="1"/>
-  <text x="568" y="257" font-size="19" font-weight="600" fill="#ffffff">PushCore engine</text>
-  <text x="568" y="281" font-size="15" fill="#dbe7f0">Read, map, truncate, ACL, hash, batch, write</text>
-  <rect x="550" y="337" width="460" height="76" rx="10" fill="#1f7ac0" stroke="#1f7ac0" stroke-width="2" stroke-dasharray="8,6" opacity="0.58"/>
-  <text x="568" y="369" font-size="19" font-weight="600" fill="#ffffff">Second instance, refused</text>
-  <text x="568" y="393" font-size="15" fill="#dbe7f0">One live crawl per connection, by lease</text>
-  <rect x="550" y="433" width="460" height="110" rx="10" fill="#0b2f52" stroke="#0b2f52" stroke-width="2" opacity="1"/>
-  <text x="568" y="465" font-size="19" font-weight="600" fill="#ffffff">Crawl state database</text>
-  <text x="568" y="489" font-size="15" fill="#dbe7f0">What was seen, what changed, what to delete,</text>
-  <text x="568" y="509" font-size="15" fill="#dbe7f0">the run lock, and the principal cache</text>
-  <rect x="550" y="563" width="460" height="76" rx="10" fill="#1f7ac0" stroke="#1f7ac0" stroke-width="2" opacity="1"/>
-  <text x="568" y="595" font-size="19" font-weight="600" fill="#ffffff">Release package</text>
-  <text x="568" y="619" font-size="15" fill="#dbe7f0">Authenticode, file catalog, SBOM</text>
-  <rect x="1160" y="225" width="370" height="92" rx="10" fill="#0b2f52" stroke="#0b2f52" stroke-width="2" opacity="1"/>
-  <text x="1178" y="257" font-size="19" font-weight="600" fill="#ffffff">Copilot connectors API</text>
-  <text x="1178" y="281" font-size="15" fill="#dbe7f0">Connections, schema, items, $batch</text>
-  <rect x="1160" y="337" width="370" height="76" rx="10" fill="#0b2f52" stroke="#0b2f52" stroke-width="2" opacity="1"/>
-  <text x="1178" y="369" font-size="19" font-weight="600" fill="#ffffff">Microsoft Search</text>
-  <text x="1178" y="393" font-size="15" fill="#dbe7f0">Result types and display templates</text>
-  <rect x="1160" y="433" width="370" height="76" rx="10" fill="#0b2f52" stroke="#0b2f52" stroke-width="2" opacity="1"/>
-  <text x="1178" y="465" font-size="19" font-weight="600" fill="#ffffff">Microsoft 365 Copilot</text>
-  <text x="1178" y="489" font-size="15" fill="#dbe7f0">Grounded on connector content</text>
-  <rect x="1160" y="529" width="370" height="97" rx="10" fill="#0b2f52" stroke="#0b2f52" stroke-width="2" opacity="1"/>
-  <text x="1178" y="561" font-size="19" font-weight="600" fill="#ffffff">Microsoft Entra ID</text>
-  <text x="1178" y="585" font-size="15" fill="#dbe7f0">Groups the access control lists</text>
-  <text x="1178" y="605" font-size="15" fill="#dbe7f0">are expressed in. No user ACEs</text>
-  <rect x="550" y="790" width="460" height="90" rx="10" fill="#1f7ac0" stroke="#1f7ac0" stroke-width="2" opacity="1"/>
-  <text x="568" y="822" font-size="19" font-weight="600" fill="#ffffff">Operations dashboard</text>
-  <text x="568" y="846" font-size="15" fill="#dbe7f0">Runs, items, health. Read only, by role</text>
-  <rect x="550" y="900" width="460" height="90" rx="10" fill="#1f7ac0" stroke="#1f7ac0" stroke-width="2" opacity="1"/>
-  <text x="568" y="932" font-size="19" font-weight="600" fill="#ffffff">Health watchdog</text>
-  <text x="568" y="956" font-size="15" fill="#dbe7f0">Freshness, and the paging matrix behind it</text>
-  <rect x="550" y="1010" width="460" height="76" rx="10" fill="#1f7ac0" stroke="#1f7ac0" stroke-width="2" stroke-dasharray="8,6" opacity="0.58"/>
-  <text x="568" y="1042" font-size="19" font-weight="600" fill="#ffffff">OTLP collector</text>
-  <text x="568" y="1066" font-size="15" fill="#dbe7f0">Spans and metrics per run. Optional</text>
-  <rect x="1160" y="790" width="370" height="100" rx="10" fill="#0b2f52" stroke="#0b2f52" stroke-width="2" opacity="1"/>
-  <text x="1178" y="822" font-size="19" font-weight="600" fill="#ffffff">Graph connector agent</text>
-  <text x="1178" y="846" font-size="15" fill="#dbe7f0">Holds the tenant relationship.</text>
-  <text x="1178" y="866" font-size="15" fill="#dbe7f0">Polls the connector over gRPC</text>
-  <rect x="1160" y="910" width="370" height="100" rx="10" fill="#1f7ac0" stroke="#1f7ac0" stroke-width="2" stroke-dasharray="8,6" opacity="0.58"/>
-  <text x="1178" y="942" font-size="19" font-weight="600" fill="#ffffff">SqlTicketsConnector</text>
-  <text x="1178" y="966" font-size="15" fill="#dbe7f0">Loopback gRPC service.</text>
-  <text x="1178" y="986" font-size="15" fill="#dbe7f0">Never calls Microsoft Graph</text>
-  <rect x="444.8" y="255" width="60.4" height="23" rx="5" fill="#ffffff" opacity="0.95"/>
-  <text x="475" y="271" font-size="14" fill="#5b6a76" text-anchor="middle">SELECT</text>
-  <rect x="452.2" y="327.7" width="45.6" height="23" rx="5" fill="#ffffff" opacity="0.95"/>
-  <text x="475" y="343.7" font-size="14" fill="#5b6a76" text-anchor="middle">read</text>
-  <rect x="971.6" y="259" width="178.8" height="23" rx="5" fill="#ffffff" opacity="0.95"/>
-  <text x="1061" y="275" font-size="14" fill="#5b6a76" text-anchor="middle">$batch, 20 per request</text>
-  <rect x="963.8" y="332.8" width="208.4" height="23" rx="5" fill="#ffffff" opacity="0.95"/>
-  <text x="1068" y="348.8" font-size="14" fill="#5b6a76" text-anchor="middle">change detection, run lock</text>
-  <rect x="694.3" y="414.2" width="171.4" height="23" rx="5" fill="#ffffff" opacity="0.95"/>
-  <text x="780" y="430.2" font-size="14" fill="#5b6a76" text-anchor="middle">lease refused, exit 5</text>
-  <rect x="961.4" y="649.5" width="149.2" height="23" rx="5" fill="#ffffff" opacity="0.95"/>
-  <text x="1036" y="665.5" font-size="14" fill="#5b6a76" text-anchor="middle">read only, by role</text>
-  <rect x="716.5" y="874.8" width="127" height="23" rx="5" fill="#ffffff" opacity="0.95"/>
-  <text x="780" y="890.8" font-size="14" fill="#5b6a76" text-anchor="middle">health endpoint</text>
-  <rect x="749.8" y="991.2" width="60.4" height="23" rx="5" fill="#ffffff" opacity="0.95"/>
-  <text x="780" y="1007.2" font-size="14" fill="#5b6a76" text-anchor="middle">alerts</text>
-  <rect x="1277.8" y="891.2" width="134.4" height="23" rx="5" fill="#ffffff" opacity="0.95"/>
-  <text x="1345" y="907.2" font-size="14" fill="#5b6a76" text-anchor="middle">gRPC on loopback</text>
-  <text x="50" y="1154" font-size="15" fill="#5b6a76">Every item written to Microsoft Graph carries an access control list derived from its source, so Copilot returns to each user only what the source system would.</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1820 1120" width="1820" height="1120" role="img" aria-label="How a source reaches the Microsoft 365 index. Six on-premises sources — two SQL Server views, a Cloudera CDP cluster holding HDFS, Hive and Atlas, plus Oracle, Teradata and MongoDB — are each read by their own console tool. Before any read, a guard refuses a source that enforces access per user; SQL Server alone has no such guard. All six tools run the shared PushCore engine against a crawl state database that holds the item inventory, the run lock and the principal cache, and push straight to the Copilot connectors API. Every item is granted one AD group per connector. Microsoft Search and Microsoft 365 Copilot read the resulting index, and a read-only dashboard, a health watchdog and an optional OTLP collector watch the runs.">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#55636F"/></marker></defs>
+<rect x="0" y="0" width="1820" height="1120" rx="0" fill="#F4F7FA" stroke="#F4F7FA" stroke-width="0"/>
+<text x="40" y="44" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="25" fill="#0A3B68" font-weight="600" text-anchor="start">Microsoft 365 Copilot connector platform</text>
+<rect x="40" y="56" width="56" height="3" fill="#EE7623"/>
+<text x="40" y="82" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#55636F" font-weight="400" text-anchor="start">Direct push only. Every tool writes to Graph itself; nothing runs behind the Graph connector agent.</text>
+<rect x="40" y="105" width="430" height="560" rx="4" fill="#F4F7FA" stroke="#D4DCE4" stroke-width="1"/>
+<text x="56" y="127" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#0A3B68" font-weight="600" text-anchor="start">SOURCES</text>
+<text x="56" y="145" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#55636F" font-weight="400" text-anchor="start">On premises, never exposed to the cloud</text>
+<rect x="60" y="160" width="390" height="66" rx="4" fill="#0A3B68" stroke="#072C4E" stroke-width="1.2"/>
+<text x="76" y="188" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#FFFFFF" font-weight="600" text-anchor="start">SQL Server — tickets</text>
+<text x="76" y="208" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#B9CBDD" font-weight="400" text-anchor="start">SELECT on a view, least privilege</text>
+<path d="M455,193 L520,193" stroke="#55636F" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<rect x="60" y="242" width="390" height="66" rx="4" fill="#0A3B68" stroke="#072C4E" stroke-width="1.2"/>
+<text x="76" y="270" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#FFFFFF" font-weight="600" text-anchor="start">SQL Server — hierarchy</text>
+<text x="76" y="290" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#B9CBDD" font-weight="400" text-anchor="start">Customers, engagements, time</text>
+<path d="M455,275 L520,275" stroke="#55636F" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<rect x="60" y="324" width="390" height="66" rx="4" fill="#0A3B68" stroke="#072C4E" stroke-width="1.2"/>
+<text x="76" y="352" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#FFFFFF" font-weight="600" text-anchor="start">Cloudera CDP</text>
+<text x="76" y="372" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#B9CBDD" font-weight="400" text-anchor="start">HDFS · Hive · Atlas catalogue</text>
+<path d="M455,357 L520,357" stroke="#55636F" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<rect x="60" y="406" width="390" height="66" rx="4" fill="#0A3B68" stroke="#072C4E" stroke-width="1.2"/>
+<text x="76" y="434" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#FFFFFF" font-weight="600" text-anchor="start">Oracle</text>
+<text x="76" y="454" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#B9CBDD" font-weight="400" text-anchor="start">A records view</text>
+<path d="M455,439 L520,439" stroke="#55636F" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<rect x="60" y="488" width="390" height="66" rx="4" fill="#0A3B68" stroke="#072C4E" stroke-width="1.2"/>
+<text x="76" y="516" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#FFFFFF" font-weight="600" text-anchor="start">Teradata</text>
+<text x="76" y="536" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#B9CBDD" font-weight="400" text-anchor="start">The text minority of a warehouse</text>
+<path d="M455,521 L520,521" stroke="#55636F" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<rect x="60" y="570" width="390" height="66" rx="4" fill="#0A3B68" stroke="#072C4E" stroke-width="1.2"/>
+<text x="76" y="598" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#FFFFFF" font-weight="600" text-anchor="start">MongoDB</text>
+<text x="76" y="618" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#B9CBDD" font-weight="400" text-anchor="start">A collection, or a GridFS bucket</text>
+<path d="M455,603 L520,603" stroke="#55636F" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<rect x="520" y="105" width="300" height="560" rx="4" fill="#F4F7FA" stroke="#D4DCE4" stroke-width="1"/>
+<text x="536" y="127" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#0A3B68" font-weight="600" text-anchor="start">BEFORE ANY READ</text>
+<text x="536" y="145" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#55636F" font-weight="400" text-anchor="start">a source enforcing per user is refused</text>
+<rect x="540" y="160" width="260" height="190" rx="4" fill="#FFFFFF" stroke="#4C9A51" stroke-width="1.4"/>
+<text x="556" y="186" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#0A3B68" font-weight="600" text-anchor="start">Guarded</text>
+<text x="556" y="210" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">· Ranger zones, masks, tag policies</text>
+<text x="556" y="227" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">· Oracle VPD, Label Security,</text>
+<text x="556" y="244" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">  Real Application Security, redaction</text>
+<text x="556" y="261" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">· Teradata row and column constraints</text>
+<text x="556" y="278" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">· Mongo views, encrypted fields</text>
+<text x="556" y="320" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#55636F" font-weight="400" text-anchor="start">An object the cluster grants to nobody</text>
+<text x="556" y="334" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#55636F" font-weight="400" text-anchor="start">is skipped before its content is read.</text>
+<rect x="540" y="372" width="260" height="92" rx="4" fill="#FBEEEC" stroke="#C0453A" stroke-width="1.4"/>
+<text x="556" y="398" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#C0453A" font-weight="600" text-anchor="start">Not guarded</text>
+<text x="556" y="420" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">SQL Server: Row-Level Security and</text>
+<text x="556" y="436" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">Dynamic Data Masking are not detected.</text>
+<text x="556" y="454" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#C0453A" font-weight="400" text-anchor="start">Scope is the only control — see ACL-1.</text>
+<path d="M670,470 L670,520" stroke="#55636F" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<text x="556" y="552" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#0A3B68" font-weight="600" text-anchor="start">Everything admitted carries ONE</text>
+<text x="556" y="568" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#0A3B68" font-weight="600" text-anchor="start">AD group: the entitlement for</text>
+<text x="556" y="584" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#0A3B68" font-weight="600" text-anchor="start">this source. Control ACL-1.</text>
+<path d="M825,193 L880,193" stroke="#55636F" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<path d="M825,275 L880,275" stroke="#55636F" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<path d="M825,357 L880,357" stroke="#55636F" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<path d="M825,439 L880,439" stroke="#55636F" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<path d="M825,521 L880,521" stroke="#55636F" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<path d="M825,603 L880,603" stroke="#55636F" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<rect x="880" y="105" width="420" height="560" rx="4" fill="#F4F7FA" stroke="#D4DCE4" stroke-width="1"/>
+<text x="896" y="127" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#0A3B68" font-weight="600" text-anchor="start">THE PUSH TOOLS</text>
+<text x="896" y="145" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#55636F" font-weight="400" text-anchor="start">Console apps. One line of Main each</text>
+<rect x="900" y="160" width="380" height="36" rx="4" fill="#E8EEF5" stroke="#0A3B68" stroke-width="1.1"/>
+<text x="916" y="183" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" font-size="12" fill="#0A3B68" font-weight="600" text-anchor="start">SqlGraphPush</text>
+<rect x="900" y="206" width="380" height="36" rx="4" fill="#E8EEF5" stroke="#0A3B68" stroke-width="1.1"/>
+<text x="916" y="229" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" font-size="12" fill="#0A3B68" font-weight="600" text-anchor="start">SqlHierarchyPush</text>
+<rect x="900" y="252" width="380" height="36" rx="4" fill="#E8EEF5" stroke="#0A3B68" stroke-width="1.1"/>
+<text x="916" y="275" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" font-size="12" fill="#0A3B68" font-weight="600" text-anchor="start">CdpGraphPush</text>
+<rect x="900" y="298" width="380" height="36" rx="4" fill="#E8EEF5" stroke="#0A3B68" stroke-width="1.1"/>
+<text x="916" y="321" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" font-size="12" fill="#0A3B68" font-weight="600" text-anchor="start">OracleGraphPush</text>
+<rect x="900" y="344" width="380" height="36" rx="4" fill="#E8EEF5" stroke="#0A3B68" stroke-width="1.1"/>
+<text x="916" y="367" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" font-size="12" fill="#0A3B68" font-weight="600" text-anchor="start">TeradataGraphPush</text>
+<rect x="900" y="390" width="380" height="36" rx="4" fill="#E8EEF5" stroke="#0A3B68" stroke-width="1.1"/>
+<text x="916" y="413" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" font-size="12" fill="#0A3B68" font-weight="600" text-anchor="start">MongoGraphPush</text>
+<rect x="900" y="448" width="380" height="92" rx="4" fill="#FFFFFF" stroke="#0A3B68" stroke-width="1.6"/>
+<text x="916" y="474" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#0A3B68" font-weight="600" text-anchor="start">PushCore engine</text>
+<text x="916" y="496" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">$batch · retry · change detection · delete sweep</text>
+<text x="916" y="512" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">(marker, id) checkpoint · redaction · exit codes</text>
+<text x="916" y="530" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#55636F" font-weight="400" text-anchor="start">One live crawl per connection, by lease</text>
+<rect x="900" y="556" width="380" height="88" rx="4" fill="#FFFFFF" stroke="#0A3B68" stroke-width="1.2"/>
+<text x="916" y="582" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#0A3B68" font-weight="600" text-anchor="start">Crawl state database</text>
+<text x="916" y="602" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">Item inventory, run history, the run lock</text>
+<text x="916" y="618" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">and the principal cache</text>
+<text x="916" y="636" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#55636F" font-weight="400" text-anchor="start">Second instance refused, exit 5</text>
+<path d="M1305,385 L1360,385" stroke="#55636F" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<text x="1332.5" y="378" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" font-size="9.5" fill="#55636F" font-weight="400" text-anchor="middle">$batch</text>
+<rect x="1360" y="105" width="420" height="560" rx="4" fill="#F4F7FA" stroke="#D4DCE4" stroke-width="1"/>
+<text x="1376" y="127" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#0A3B68" font-weight="600" text-anchor="start">MICROSOFT 365 CLOUD</text>
+<text x="1376" y="145" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#55636F" font-weight="400" text-anchor="start">The tenant side</text>
+<rect x="1380" y="160" width="380" height="76" rx="4" fill="#0A3B68" stroke="#072C4E" stroke-width="1.2"/>
+<text x="1396" y="188" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#FFFFFF" font-weight="600" text-anchor="start">Copilot connectors API</text>
+<text x="1396" y="210" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#B9CBDD" font-weight="400" text-anchor="start">Connections, schema, items, $batch</text>
+<rect x="1380" y="256" width="380" height="84" rx="4" fill="#FFFFFF" stroke="#0A3B68" stroke-width="1.2"/>
+<text x="1396" y="282" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#0A3B68" font-weight="600" text-anchor="start">Microsoft Entra ID</text>
+<text x="1396" y="302" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">One AD group per connector expresses</text>
+<text x="1396" y="318" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">every item's ACL. No user ACEs.</text>
+<text x="1396" y="334" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#55636F" font-weight="400" text-anchor="start">Revocation runs through AD.</text>
+<rect x="1380" y="372" width="380" height="72" rx="4" fill="#EAF2EA" stroke="#4C9A51" stroke-width="1.4"/>
+<text x="1396" y="398" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#2F6B33" font-weight="600" text-anchor="start">Microsoft Search</text>
+<text x="1396" y="420" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">Result types and display templates</text>
+<rect x="1380" y="460" width="380" height="72" rx="4" fill="#EAF2EA" stroke="#4C9A51" stroke-width="1.4"/>
+<text x="1396" y="486" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#2F6B33" font-weight="600" text-anchor="start">Microsoft 365 Copilot</text>
+<text x="1396" y="508" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">Grounded on connector content</text>
+<rect x="1380" y="548" width="380" height="96" rx="4" fill="#FFFFFF" stroke="#D4DCE4" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="1396" y="574" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="12" fill="#C0453A" font-weight="600" text-anchor="start">Never reaches the index</text>
+<text x="1396" y="596" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">· Row-filtered and masked objects</text>
+<text x="1396" y="612" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">· Objects the source grants to nobody</text>
+<text x="1396" y="628" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">· Anything a guard refused</text>
+<rect x="40" y="690" width="1740" height="190" rx="4" fill="#F4F7FA" stroke="#D4DCE4" stroke-width="1"/>
+<text x="56" y="712" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#0A3B68" font-weight="600" text-anchor="start">OPERATIONS</text>
+<text x="56" y="730" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#55636F" font-weight="400" text-anchor="start">Read only, and out of the write path</text>
+<rect x="60" y="740" width="324" height="112" rx="4" fill="#FFFFFF" stroke="#0A3B68" stroke-width="1.2"/>
+<text x="76" y="768" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0A3B68" font-weight="600" text-anchor="start">Operations dashboard</text>
+<text x="76" y="790" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">Runs, items, health. By group membership</text>
+<rect x="404" y="740" width="324" height="112" rx="4" fill="#FFFFFF" stroke="#0A3B68" stroke-width="1.2"/>
+<text x="420" y="768" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0A3B68" font-weight="600" text-anchor="start">Health watchdog</text>
+<text x="420" y="790" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">Freshness, and the paging matrix behind it</text>
+<rect x="748" y="740" width="324" height="112" rx="4" fill="#FFFFFF" stroke="#0A3B68" stroke-width="1.2"/>
+<text x="764" y="768" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0A3B68" font-weight="600" text-anchor="start">Reconciliation</text>
+<text x="764" y="790" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">Inventory to index, and source to inventory</text>
+<rect x="1092" y="740" width="324" height="112" rx="4" fill="#FFFFFF" stroke="#0A3B68" stroke-width="1.2"/>
+<text x="1108" y="768" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0A3B68" font-weight="600" text-anchor="start">OTLP collector</text>
+<text x="1108" y="790" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">Spans and metrics per run. Optional</text>
+<rect x="1436" y="740" width="324" height="112" rx="4" fill="#FFFFFF" stroke="#0A3B68" stroke-width="1.2"/>
+<text x="1452" y="768" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0A3B68" font-weight="600" text-anchor="start">Release package</text>
+<text x="1452" y="790" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#1B2733" font-weight="400" text-anchor="start">Authenticode, file catalog, SBOM</text>
+<path d="M1090,664 L1090,740" stroke="#55636F" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+<text x="40" y="930" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#0A3B68" font-weight="600" text-anchor="start">What a source concept becomes</text>
+<text x="60" y="960" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#1B2733" font-weight="400" text-anchor="start">A group grant on an object</text>
+<text x="430" y="960" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#EE7623" font-weight="600" text-anchor="start">→</text>
+<text x="470" y="960" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#55636F" font-weight="400" text-anchor="start">the connector's single AD group</text>
+<text x="60" y="986" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#1B2733" font-weight="400" text-anchor="start">A deny, a row filter, a mask</text>
+<text x="430" y="986" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#EE7623" font-weight="600" text-anchor="start">→</text>
+<text x="470" y="986" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#55636F" font-weight="400" text-anchor="start">a refusal to index, not a narrower ACL</text>
+<text x="60" y="1012" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#1B2733" font-weight="400" text-anchor="start">A grant to a named individual</text>
+<text x="430" y="1012" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#EE7623" font-weight="600" text-anchor="start">→</text>
+<text x="470" y="1012" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#55636F" font-weight="400" text-anchor="start">nothing — a Graph ACL carries group ids</text>
+<text x="60" y="1038" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#1B2733" font-weight="400" text-anchor="start">A time-bounded or conditional grant</text>
+<text x="430" y="1038" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#EE7623" font-weight="600" text-anchor="start">→</text>
+<text x="470" y="1038" font-family="IBM Plex Sans, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#55636F" font-weight="400" text-anchor="start">a refusal, or a stated staleness bound</text>
+<text x="40" y="1096" font-family="IBM Plex Mono, ui-monospace, Menlo, monospace" font-size="10.5" fill="#55636F" font-weight="400" text-anchor="start">Regenerate with .github/scripts/render-architecture.py — see connector-tiers.svg for what adding a connector costs.</text>
 </svg>

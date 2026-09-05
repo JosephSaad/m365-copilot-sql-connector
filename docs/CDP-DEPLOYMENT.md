@@ -35,7 +35,7 @@ on-premises agent service, no gateway, and nothing registered in the Microsoft
 and calls `PUT /external/connections/{id}/items/{id}` itself. The agent-hosted
 ticket connector in [`../README.md`](../README.md) is a different pipeline
 entirely; the two share code, not deployments.
-[`architecture.png`](architecture.png) draws both paths, the three sources and
+[`architecture.png`](architecture.png) draws the six sources and
 the Ranger gate in front of them on one page.
 
 **It is three connectors, three connections, one executable.**

@@ -67,7 +67,7 @@ re-run the generator, and the output regenerates.
 | Source | Generator | Produces |
 |---|---|---|
 | [`guides/deployment-and-test-guide.html`](guides/deployment-and-test-guide.html) | `guides/New-DeploymentGuide.ps1` | A 22-page Word guide to deploying and testing this connector **from no prior knowledge** — vocabulary, prerequisites, every command explained, eleven tests in order, eleven traps, and troubleshooting indexed by symptom |
-| the layout inside `diagrams/New-ArchitectureDiagram.ps1` | the same script | [`architecture.svg`](architecture.svg) and [`architecture.png`](architecture.png), from one declared layout so the two cannot disagree |
+| the layout inside `.github/scripts/render-architecture.py` | the same script | [`architecture.svg`](architecture.svg) and [`architecture.png`](architecture.png), from one declared layout so the two cannot disagree |
 
 Both need Word or `System.Drawing` on the machine, are documentation builds
 rather than part of `Build.ps1`, and nothing in CI depends on either. Their
