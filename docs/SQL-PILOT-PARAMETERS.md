@@ -1,8 +1,8 @@
 # What we need from the SQL and platform teams
 
 **Purpose.** Everything needed to reach a SQL Server source and run a
-proof-of-concept pilot, for **both** delivery paths — the agent-hosted connector
-and the direct push. Fill in the right-hand column and send it back.
+proof-of-concept pilot on the **direct push** path. Fill in the right-hand column
+and send it back.
 
 **Nothing here is a secret, and nothing should be.** Where the source needs a
 SQL login rather than Windows authentication, we ask for the **name of a Key
@@ -15,28 +15,29 @@ Example values use the reserved `contoso.local` domain.
 
 ---
 
-## 0 · Which path — answer this first
+## 0 · The path is settled — read this, do not answer it
 
-The two paths differ in what they can promise, not in what Copilot does with the
-result. An item pushed directly is indistinguishable in the index from one the
-agent crawled; the difference is everything around the write.
+**Direct push, and there is no longer a choice to make.** This section used to
+ask which of two delivery paths to take, and compared them on deletion, change
+detection and scheduling. **Three of those comparisons are now wrong**, and they
+were wrong in the direction that pushed people towards the agent:
 
-| | **Agent-hosted** | **Direct push** |
-|---|---|---|
-| Needs a Windows host | **Yes** — runs the Graph connector agent | No — anywhere with outbound HTTPS |
-| Deletes removed records | **Detected for you**, on the next crawl | **Not detected** — the API can delete an item, but only when your own code calls it |
-| Scheduling | The admin centre runs it | You own the timer |
-| Health visible in the admin centre | **Yes** | No — only in your own logs |
-| Change detection | The agent hashes and skips unchanged rows | You send everything, or build your own |
-| Reaches Microsoft from | The agent host only | Whatever host runs the push |
+| The old sheet said | What is true now |
+|---|---|
+| Direct push **never deletes**; anything tighter than "by the next crawl" rules it out | Direct push **detects deletions itself** — an inventory diff after a full crawl, a sweep, and a guard that refuses a sweep after an incremental run. It is live-tested |
+| Change detection: **you send everything, or build your own** | The engine hashes content and ACL **separately** and writes only what moved. Also live-tested |
+| Direct push is for backfills; the **wrong tool for a standing sync** | It runs a standing sync. It has a single-instance run lock, run history, retention and reconciliation |
 
-| # | What we need | Why | Your answer |
-|---|---|---|---|
-| 0.1 | **How fast must a deleted record stop appearing in Copilot?** | This is the question that decides the path, and it is usually answered too casually. Anything tighter than "by the next crawl" rules out direct push entirely, because a direct push never deletes | |
-| 0.2 | **Is there a Windows host available** to run the agent, and who patches it? | Agent-hosted is only an option if the answer is yes. If not, the deletion answer above has to be renegotiated rather than engineered around | |
-| 0.3 | Is this a **one-off backfill or proof of concept**, or a standing sync? | Direct push is the right tool for backfills, smoke tests and proving the tenant. It is the wrong tool for a standing sync, for the reasons in the table above | |
+What the agent-hosted path genuinely still offers is health in the admin centre
+and one firewall case rather than one per push host. Neither outweighed owning
+the schedule, the state and the refusals, and the decision was taken to build on
+direct push only.
 
-## 1 · The SQL source — needed for both paths
+**The deletion question has not gone away** — it moved. Deletion is bounded by
+the crawl interval on either path, so the question is not *which path* but *how
+often*, and that is 7.1 in the onboarding sheet rather than a row here.
+
+## 1 · The SQL source
 
 | # | What we need | Why | Your answer |
 |---|---|---|---|
@@ -61,22 +62,23 @@ agent crawled; the difference is everything around the write.
 
 | # | What we need | Why | Your answer |
 |---|---|---|---|
-| 3.1 | The **Entra group object IDs** that should be able to find this content | Every indexed item carries an access list of Entra groups. Group names are not enough — the object ID is what is written onto the item | |
-| 3.2 | Is access **uniform across all rows**, or does it vary per row? | If different people should see different rows, an index is the wrong shape: one stored copy cannot represent a per-user view. That case needs a live query instead, and is better known now than after the schema is built | |
+| 3.1 | The **single Entra group object ID** — one AD group, the entitlement for this source | Control ACL-1: every item a connector writes is granted one group and nothing else. Not a list, and not a per-row derivation. **The condition this creates is that the group must be entitled to the least-accessible row in scope**, so anything narrower than the group is excluded rather than indexed | |
+| 3.2 | Is access **uniform across all rows**, or does it vary per row? | The safety condition for 3.1. If different people should see different rows, this corpus cannot be indexed under one group — narrow the view until it can, or the rows that vary stay out. Row-Level Security and Dynamic Data Masking are the SQL Server features to check for, and **the connector does not detect either**, so this answer is the only control | |
 | 3.3 | Is any of this content **licensed from a third party**? | Indexing licensed content is a redistribution and entitlement event. If the answer is yes, we need to see the agreement's redistribution, derived-data and AI-use clauses before designing anything | |
 
-## 4 · Path A — agent-hosted only
+## 4 · Not needed — the agent-hosted path
 
-Skip this section if 0.1 and 0.2 pointed at direct push.
+This section asked for a Windows host, a loopback TLS certificate and a crawl
+schedule run from the admin centre. **None of it is needed.** It is kept as a
+heading rather than deleted so that anyone holding an older copy of this sheet can
+see the rows were withdrawn deliberately, not lost.
 
-| # | What we need | Why | Your answer |
-|---|---|---|---|
-| 4.1 | The **Windows host** for the Graph connector agent, and its patching owner | The agent is a service on a machine somebody has to own. This is the cost the direct push avoids and the capability it gives up | |
-| 4.2 | Confirmation that only **that host** needs outbound 443 to Microsoft | The connector process talks to the agent over loopback only; the agent alone reaches Microsoft. On a locked-down network this is the main argument for this path — one firewall case rather than one per push host | |
-| 4.3 | A **TLS certificate** for the loopback listener, by thumbprint from the machine store | The connector and the agent talk gRPC over localhost with TLS. We need the thumbprint of a certificate already installed — not the certificate itself | |
-| 4.4 | The **crawl schedule** you want, full and incremental | The admin centre runs these. Incremental can go down to every 15 minutes; the deletion SLA from 0.1 has to fit inside whatever is chosen | |
+If the agent path is ever revisited, the requirements are in
+[`ADDING-A-PUSH-CONNECTOR.md`](ADDING-A-PUSH-CONNECTOR.md) and the code still
+exists — but it is not maintained, and `SqlTicketsConnector` is the one project
+that cannot be built on a developer machine without a protoc for its platform.
 
-## 5 · Path B — direct push only
+## 5 · The push host and its Graph identity
 
 Skip this section if 0.1 and 0.2 pointed at agent-hosted.
 
@@ -85,7 +87,9 @@ Skip this section if 0.1 and 0.2 pointed at agent-hosted.
 | 5.1 | An **Entra app registration**: tenant ID, client ID | The push authenticates to Graph as an application. It needs `ExternalConnection.ReadWrite.OwnedBy` and `ExternalItem.ReadWrite.OwnedBy`, admin-consented | |
 | 5.2 | A **certificate** for that app — the **thumbprint**, and which store it is installed in | Certificate authentication, not a client secret. We need the thumbprint of an installed certificate; the private key never leaves the machine store. If a client secret is unavoidable, it goes in Windows Credential Manager by target *name* | |
 | 5.3 | Which **host** will run the push, and on what schedule | Direct push has no scheduler of its own. Something has to invoke it, and somebody has to notice when it stops | |
-| 5.4 | Agreement on **who reconciles orphaned items** | A direct push never deletes. Rows that leave scope keep their items in the index indefinitely. This needs a named owner and a periodic job, agreed before the first run rather than after the first audit | |
+| 5.4 | Agreement on **who runs reconciliation, and how often** | The push detects deletions itself, but a divergence between source and index is still possible and nothing reports it unless somebody looks. `Compare-SourceToIndex.ps1` and `Compare-InventoryToIndex.ps1` are the two directions | |
+| 5.4a | A **SQL Server instance for the crawl state database**, and a login that can create it | Four things need it: incremental reads, the single-instance run lock, run history, and both reconcilers. Express is sufficient — it holds item ids, hashes and run rows, never source content. **Without it the push reads the whole corpus every run and cannot be reconciled at all** | |
+| 5.4b | A **read-only login** on that database for the dashboard and the reconcilers | `sql/25` DENYs the connector's own writer login SELECT on the crawl views deliberately, so reconciling with the push identity fails by design | |
 | 5.5 | A **connection ID** for the Graph connection | Lowercase alphanumeric, fixed for the life of the connection. Changing it later means a new connection and a full re-push | |
 
 ## 6 · Network
@@ -100,11 +104,13 @@ Skip this section if 0.1 and 0.2 pointed at agent-hosted.
 
 ## Three notes worth reading before you answer
 
-**0.1 decides the architecture, not the schedule.** "How fast must a deleted
-record disappear" sounds operational and is structural: direct push never
-detects deletions at all, and the agent detects them only on its next crawl. A
-same-day answer forces the agent-hosted path even where there is no host to run
-it on — in which case the SLA, not the design, is what has to change.
+**The deletion question decides the schedule, not the architecture.** It used to
+decide the path, on the basis that direct push never detected deletions. It does
+now — an inventory diff after a full crawl, a sweep, and a guard that refuses a
+sweep after an incremental run — so deletion is bounded by the crawl interval,
+and the interval is a setting. What no path offers is immediate removal: if a
+record must stop appearing the moment it is deleted, no index qualifies and the
+SLA is what has to change.
 
 **A registered schema is append-only (1.7).** No property's type, annotation or
 label can be changed after registration. Correcting a mistake means deleting the
